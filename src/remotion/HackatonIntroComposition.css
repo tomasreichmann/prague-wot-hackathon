@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap");
+
+.Frame {
+  font-family: "Roboto Condensed", sans-serif;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.Frame h1 {
+  margin: 0;
+  font-size: 200px;
+  font-weight: bold;
+}
