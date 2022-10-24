@@ -19,7 +19,7 @@ export default function App() {
 
       <main className="text-center flex flex-col gap-5 pb-10 overflow-hidden relative md:items-center">
         <div className="flex flex-col gap-5 md:flex-row md:p-10 max-w-[1200px] ">
-          <div className="relative md:w-1/2 md:flex-shrink-0">
+          <div className="relative md:w-1/2 md:flex-shrink-0 z-10">
             <Player
               component={HackathonIntroComposition}
               inputProps={{ text: "World" }}
