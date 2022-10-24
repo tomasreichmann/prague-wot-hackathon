@@ -7,7 +7,7 @@ import { joinLink, lookingForATeamLink } from "./constants";
 export default function App() {
   return (
     <div className="App font-body text-white overflow-x-hidden relative">
-      <header className="[background-image:url('../public/ribbon.png')] sm:[background-image:url('../public/ribbon-large.png')] bg-center bg-no-repeat h-[160px] flex flex-col justify-center [background-size:auto_100%] xl:h-[340px]">
+      <header className="[background-image:url('../public/ribbon.png')] sm:[background-image:url('../public/ribbon-large.png')] bg-center bg-no-repeat h-[160px] flex flex-col justify-center [background-size:auto_100%] xl:h-[280px]">
         <h1 className="m-0 flex flex-row justify-center">
           <img
             className="block h-[125px] xl:h-[260px]"
@@ -112,7 +112,7 @@ export default function App() {
         <div className="z-10 relative lg:pt-10 lg:text-lg xl:text-xl">
           <h2 className="text-primary font-bold">ORGANIZATION</h2>
           <p className="text-white">
-            Konstantin Kalinovsky, Tomáš Reichmann,Larisa Yurchenko,{" "}
+            Tomáš Reichmann, Konstantin Kalinovský, Larisa Yurchenko,{" "}
             <span className="text-primary">Garant:</span>&ensp;Aleksey Dyakov
           </p>
         </div>
