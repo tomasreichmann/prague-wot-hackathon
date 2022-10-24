@@ -1,5 +1,4 @@
 import { AbsoluteFill, Sequence } from "remotion";
-import "./HackatonIntroComposition.css";
 import Typing from "./Typing";
 
 export type TextSequenceProps = {
@@ -28,7 +27,7 @@ export default function TextSequence({
   textSequence,
   from,
   sequenceDelay = defaultSequenceDelay,
-  framesPerCharacter = defaultFramesPerCharacter
+  framesPerCharacter = defaultFramesPerCharacter,
 }: TextSequenceProps) {
   return (
     <>
@@ -46,15 +45,7 @@ export default function TextSequence({
             durationInFrames={thisLength + sequenceDelay}
           >
             <AbsoluteFill className="Frame">
-              <p
-                style={{
-                  fontSize: 130,
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  padding: 100,
-                  position: "relative"
-                }}
-              >
+              <p>
                 <Typing framesPerCharacter={framesPerCharacter}>{text}</Typing>
               </p>
             </AbsoluteFill>

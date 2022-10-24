@@ -1,4 +1,5 @@
 import { registerRoot } from "remotion";
-import HackatonIntroVideo from "./HackatonIntroVideo";
+import HackathonIntroVideo from "./HackathonIntroVideo";
 
-registerRoot(HackatonIntroVideo);
+registerRoot(HackathonIntroVideo);
+  

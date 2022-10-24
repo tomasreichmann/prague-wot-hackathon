@@ -1,5 +1,4 @@
 import { useCurrentFrame } from "remotion";
-import "./HackatonIntroComposition.css";
 import FormatText from "./FormatText";
 
 export type TypingProps = {
@@ -9,13 +8,13 @@ export type TypingProps = {
 };
 
 const aliasMap = {
-  "|": "br"
+  "|": "br",
 };
 
 export default function Typing({
   children,
   framesPerCharacter = 3,
-  from = 0
+  from = 0,
 }: TypingProps) {
   const frame = useCurrentFrame();
 

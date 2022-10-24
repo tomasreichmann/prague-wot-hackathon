@@ -1,10 +1,14 @@
-"Join now!|We have actual cookies!";
+import { PropsWithChildren } from "react";
 import { Easing, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
-import "./HackatonIntroComposition.css";
+import { joinLink } from "../constants";
 import Text from "./Text";
 import Typing from "./Typing";
 
-export type JoinNowProps = React.PropsWithChildren<{ duration: number }>;
+export type JoinNowProps = PropsWithChildren<{ duration: number }>;
+
+const JoinLink = (props: React.HTMLAttributes<HTMLAnchorElement>) => (
+  <a {...props} href={joinLink} target="_blank" />
+);
 
 export default function JoinNow({ duration }: JoinNowProps) {
   const frame = useCurrentFrame();
@@ -14,7 +18,7 @@ export default function JoinNow({ duration }: JoinNowProps) {
     ((Math.sin(
       interpolate(frame, [glowDelay, duration], [0, 3 * 2 * Math.PI], {
         extrapolateLeft: "clamp",
-        extrapolateRight: "clamp"
+        extrapolateRight: "clamp",
       })
     ) +
       1) /
@@ -23,34 +27,33 @@ export default function JoinNow({ duration }: JoinNowProps) {
   const fadeOutSizeDuration = 20;
   const fadeOutScale = interpolate(
     frame,
-    [duration - fadeOutSizeDuration, duration],
+    [duration - fadeOutSizeDuration, duration - 5],
     [1, 0],
     {
       easing: Easing.bezier(1, 0, 1, 1),
       extrapolateLeft: "clamp",
-      extrapolateRight: "clamp"
+      extrapolateRight: "clamp",
     }
   );
 
   return (
     <div style={{ transform: "scale(" + fadeOutScale + ")" }}>
       <div
+        className="joinNow_cta"
         style={{
-          color: "#FFDD99",
           textShadow: `0px 0px ${
             glowSize * 50
           }px rgba(255, 127, 0, 0.25), 0px 0px ${
             glowSize * 50
           }px #FF2A00, 0px 0px 8px #EE5522`,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          transform: `scale(${glowSize / 16 + 1})`
+          transform: `scale(${glowSize / 16 + 1})`,
         }}
       >
-        <Text duration={fps * 3}>JOIN NOW</Text>
+        <Text duration={fps * 3} Component={JoinLink}>
+          JOIN NOW
+        </Text>
       </div>
-      <div style={{ fontSize: 80, fontWeight: "bold", minHeight: "2em" }}>
+      <div className="joinNow_subHeader">
         <Typing from={30} framesPerCharacter={1}>
           We have actual cookies!
         </Typing>

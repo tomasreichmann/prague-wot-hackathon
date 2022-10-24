@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap");
+
+body,
+html {
+  margin: 0;
+}
+body {
+  background: #222 url("./bg.jpg") center top / cover no-repeat;
+  min-height: 100vh;
+}
+
+@media (min-width: 640px) {
+  body {
+    background-image: url("./bg-large.jpg");
+  }
+}
+
+/*
+.board {
+  transform: perspective(200px) rotate3d(0.6, 0.3, 0.6, 15deg);
+  transform-style: preserve-3d;
+}
+
+h1 {
+  color: white;
+  font-family: cursive;
+  font-size: 10vmin;
+}
+*/
+
+.Glare-cw {
+  animation: rotate-cw 60s linear infinite;
+}
+
+.Glare-ccw {
+  animation: rotate-cw 30s linear infinite reverse;
+}
+
+@keyframes rotate-cw {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
