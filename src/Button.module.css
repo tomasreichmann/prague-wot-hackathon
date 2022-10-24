@@ -2,15 +2,12 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 0px 1px #000000;
   border-radius: 1px;
-  min-width: 160px;
+  min-width: 200px;
   font-weight: 700;
-  font-size: 15px;
-  line-height: 15px;
+  font-size: inherit;
+  line-height: inherit;
   padding: 7px 15px 9px 15px;
   cursor: pointer;
-}
-
-.Button:hover {
 }
 
 .Button_primary {

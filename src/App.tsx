@@ -17,8 +17,8 @@ export default function App() {
         </h1>
       </header>
 
-      <main className="text-center flex flex-col gap-5 pb-10 overflow-hidden relative md:items-center lg:text-lg xl:text-xl">
-        <div className="flex flex-col gap-5 md:flex-row md:py-10 max-w-[1200px]">
+      <main className="text-center flex flex-col gap-5 pb-10 overflow-hidden relative md:items-center">
+        <div className="flex flex-col gap-5 md:flex-row md:p-10 max-w-[1200px] ">
           <div className="relative md:w-1/2 md:flex-shrink-0">
             <Player
               component={HackathonIntroComposition}
@@ -33,7 +33,7 @@ export default function App() {
               controls
             />
           </div>
-          <div className="grid grid-cols-2 gap-2 [align-content:center]">
+          <div className="grid grid-cols-2 gap-2 [align-content:center]  lg:text-lg xl:text-xl">
             <div className="">
               <h2 className="text-primary font-bold">DATE</h2>
               <p className="text-white font-bold">21.-25. 11. 2022</p>
@@ -64,7 +64,7 @@ export default function App() {
               </p>
             </div>
           </div>
-          <div className="flex flex-row justify-center px-5 gap-5 z-10 relative md:flex-col">
+          <div className="flex flex-row justify-center px-5 gap-5 z-10 relative md:flex-col lg:text-lg xl:text-xl">
             <div className="text-center">
               <img src="/pizza.svg" alt="" className="w-[50px] mb-2 inline" />
               <h2 className="text-white font-bold">FOOD</h2>
@@ -79,7 +79,7 @@ export default function App() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 items-center relative">
+        <div className="flex flex-col gap-2 items-center relative lg:text-lg xl:text-xl">
           <div className="relative z-0">
             <Button
               Component="a"
@@ -109,7 +109,7 @@ export default function App() {
             Looking for a team
           </Button>
         </div>
-        <div className="z-10 relative lg:pt-10">
+        <div className="z-10 relative lg:pt-10 lg:text-lg xl:text-xl">
           <h2 className="text-primary font-bold">ORGANIZATION</h2>
           <p className="text-white">
             Konstantin Kalinovsky, Tomáš Reichmann,Larisa Yurchenko,{" "}
