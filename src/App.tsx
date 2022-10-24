@@ -7,10 +7,10 @@ import { joinLink, lookingForATeamLink } from "./constants";
 export default function App() {
   return (
     <div className="App font-body text-white overflow-x-hidden relative">
-      <header className="[background-image:url('../public/ribbon.png')] sm:[background-image:url('../public/ribbon-large.png')] bg-center bg-no-repeat h-[160px] flex flex-col justify-center [background-size:auto_100%] xl:h-[280px]">
-        <h1 className="m-0 flex flex-row justify-center">
+      <header className="[background-image:url('../public/ribbon.png')] sm:[background-image:url('../public/ribbon-large.png')] bg-bottom bg-no-repeat h-[160px] flex flex-col justify-center bg-cover xl:h-[280px] xl:min-h-[12vw] pt-[17px] pb-[18px]">
+        <h1 className="m-0 flex-1 shrink flex flex-col justify-center items-center">
           <img
-            className="block h-[125px] xl:h-[260px]"
+            className="block h-[125px] xl:h-[calc(100%-4vw)]"
             src="/logo-flat.svg"
             alt="Prague World of Tanks Hackathon 2022"
           />
@@ -75,7 +75,9 @@ export default function App() {
             </div>
             <div className="text-center">
               <img src="/no-work.svg" alt="" className="w-[50px] mb-2 inline" />
-              <h2 className="text-white font-bold">NO WORK</h2>
+              <h2 className="text-white font-bold whitespace-nowrap">
+                NO WORK
+              </h2>
             </div>
           </div>
         </div>
