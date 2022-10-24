@@ -1,6 +1,6 @@
 import { Player } from "@remotion/player";
 import { durationInFrames } from "./remotion/HackathonIntroVideo";
-import HackathonIntroVideo from "./remotion/HackathonIntroVideo";
+import HackathonIntroComposition from "./remotion/HackathonIntroComposition";
 import Button from "./Button";
 import { joinLink, lookingForATeamLink } from "./constants";
 
@@ -21,7 +21,7 @@ export default function App() {
         <div className="flex flex-col gap-5 md:flex-row md:py-10 max-w-[1200px]">
           <div className="relative md:w-1/2 md:flex-shrink-0">
             <Player
-              component={HackathonIntroVideo}
+              component={HackathonIntroComposition}
               inputProps={{ text: "World" }}
               durationInFrames={durationInFrames}
               compositionWidth={1920}
