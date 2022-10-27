@@ -2,7 +2,7 @@ import { Player } from "@remotion/player";
 import { durationInFrames } from "./remotion/HackathonIntroVideo";
 import HackathonIntroComposition from "./remotion/HackathonIntroComposition";
 import Button from "./Button";
-import { joinLink, lookingForATeamLink } from "./constants";
+import { infoChannelLink, joinLink, lookingForATeamLink } from "./constants";
 
 export default function App() {
   return (
@@ -110,6 +110,12 @@ export default function App() {
           >
             Looking for a team
           </Button>
+          <a
+            href={infoChannelLink}
+            className="z-10 mt-2 text-primary underline hover:text-white hover:no-underline transition-colors"
+          >
+            Hackathon info channel on MS Teams
+          </a>
         </div>
         <div className="z-10 relative lg:pt-10 lg:text-lg xl:text-xl">
           <h2 className="text-primary font-bold">ORGANIZATION</h2>
