@@ -1,130 +1,108 @@
-import { Player } from "@remotion/player";
-import { durationInFrames } from "./remotion/HackathonIntroVideo";
-import HackathonIntroComposition from "./remotion/HackathonIntroComposition";
 import Button from "./Button";
 import { infoChannelLink, joinLink, lookingForATeamLink } from "./constants";
 
 export default function App() {
   return (
     <div className="App font-body text-white overflow-x-hidden relative">
-      <header className="[background-image:url('../public/ribbon.png')] sm:[background-image:url('../public/ribbon-large.png')] bg-bottom bg-no-repeat h-[160px] flex flex-col justify-center bg-cover xl:h-[280px] xl:min-h-[12vw] pt-[17px] pb-[18px]">
-        <h1 className="m-0 flex-1 shrink flex flex-col justify-center items-center">
-          <img
-            className="block h-[125px] xl:h-[calc(100%-4vw)]"
-            src="/logo-flat.svg"
-            alt="Prague World of Tanks Hackathon 2022"
-          />
+      <header className="h-[360px] relative overflow-hidden">
+        <h1 className="m-0 mt-10 ml-5 flex flex-col uppercase leading-[0.85] [letter-spacing:-0.05em] font-bold text-secondary-dark [text-shadow:0px_0px_16px_#ECD7B7]">
+          <span className="text-[30px]">Prague</span>
+          <span className="text-[30px]">World of Tanks</span>
+          <span className="text-[41px]">Hackathon</span>
+          <span className="text-[60px]">2023</span>
         </h1>
+        <img
+          src="/header.png"
+          alt=""
+          className="h-full w-full object-cover -z-10 absolute left-0 top-0"
+        />
       </header>
-
-      <main className="text-center flex flex-col gap-5 pb-10 overflow-hidden relative md:items-center">
-        <div className="flex flex-col gap-5 md:flex-row md:p-10 max-w-[1200px] ">
-          <div className="relative md:w-1/2 md:flex-shrink-0 z-10">
-            <Player
-              component={HackathonIntroComposition}
-              inputProps={{ text: "World" }}
-              durationInFrames={durationInFrames}
-              compositionWidth={1920}
-              compositionHeight={1080}
-              fps={30}
-              style={{
-                width: "100%",
-              }}
-              controls
-            />
-          </div>
-          <div className="grid grid-cols-2 gap-2 [align-content:center]  lg:text-lg xl:text-xl">
-            <div className="">
-              <h2 className="text-primary font-bold">DATE</h2>
-              <p className="text-white font-bold">21.-25. 11. 2022</p>
-            </div>
-            <div className="">
-              <h2 className="text-primary font-bold">PLACE</h2>
-              <p className="text-white font-bold">WG Prague Office</p>
-            </div>
-            <div className="">
-              <h2 className="text-primary font-bold">TOPIC</h2>
-              <p className="text-white font-bold">
-                Make World of Tanks
-                <wbr />
-                Great Again
-              </p>
-            </div>
-            <div className="">
-              <h2 className="text-primary font-bold">TEAMS</h2>
-              <p className="text-white font-bold">
-                1-6 participants, remote friendly
-              </p>
-            </div>
-            <div className="col-span-2">
-              <h2 className="text-primary font-bold">PRIZES</h2>
-              <p className="text-white font-bold">
-                Cool prizes for all participants and special prize for the
-                winning project. Winners are selected by participant votes.
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-row justify-center px-5 gap-5 z-10 relative md:flex-col lg:text-lg xl:text-xl">
-            <div className="text-center">
-              <img src="/pizza.svg" alt="" className="w-[50px] mb-2 inline" />
-              <h2 className="text-white font-bold">FOOD</h2>
-            </div>
-            <div className="text-center">
-              <img src="/swag.svg" alt="" className="w-[50px] mb-2 inline" />
-              <h2 className="text-white font-bold">SWAG</h2>
-            </div>
-            <div className="text-center">
-              <img src="/no-work.svg" alt="" className="w-[50px] mb-2 inline" />
-              <h2 className="text-white font-bold whitespace-nowrap">
-                NO WORK
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col gap-2 items-center relative lg:text-lg xl:text-xl">
-          <div className="relative z-0">
-            <Button
-              Component="a"
-              size="big"
-              variant="primary"
-              className="z-10 relative block"
-              target="_blank"
-              href={joinLink}
-            >
-              JOIN NOW!
+      <main className="flex flex-col text-text">
+        <div className="flex flex-col gap-2 px-5 mt-2">
+          <div className="flex flex-row gap-2">
+            <Button href={joinLink} className="flex-1">
+              Join now!
             </Button>
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rotate-cw pointer-events-none">
-              <img src="/glare.png" alt="" className="max-w-none Glare-cw" />
-              <img
-                src="/glare.png"
-                alt=""
-                className="max-w-none Glare-ccw absolute left-0 top-0"
-              />
-            </div>
+            <Button
+              href={lookingForATeamLink}
+              className="flex-1"
+              variant="secondary"
+            >
+              I need a team
+            </Button>
           </div>
-          <Button
-            Component="a"
-            href={lookingForATeamLink}
-            target="_blank"
-            className="z-10 block"
-          >
-            Looking for a team
-          </Button>
-          <a
-            href={infoChannelLink}
-            className="z-10 mt-2 text-primary underline hover:text-white hover:no-underline transition-colors"
-          >
-            Hackathon info channel on MS Teams
-          </a>
+
+          <div className="px-5 py-2 bg-primary-dark text-lg leading-none text-center uppercase [letter-spacing:-0.05em] font-bold">
+            Roll out your own World of Tanks innovation!
+          </div>
+
+          <div className="px-5 py-2 flex flex-row gap-2 justify-center items-center bg-primary text-2xl leading-none text-center uppercase [letter-spacing:-0.05em] font-bold">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"
+              />
+            </svg>
+            20.-22. 9. 2023
+          </div>
+
+          <div className="px-5 py-5 flex flex-col gap-2 items-stretch bg-secondary leading-tight text-sm">
+            <h2 className="text-xl font-bold uppercase m-0"> Categories</h2>
+            <p>
+              <strong>Tank It Easy</strong> &ndash; Simplify the new player or
+              win-back experience
+            </p>
+            <p>
+              <strong>Casual Cruise</strong> &ndash; Bring fresh casual gameplay
+            </p>
+            <p>
+              <strong>Subscription Surge</strong> &ndash; Improve our premium
+              products
+            </p>
+            <p>
+              <strong>Out of the Box</strong> &ndash; Blow our minds with
+              something unexpected
+            </p>
+          </div>
         </div>
-        <div className="z-10 relative lg:pt-10 lg:text-lg xl:text-xl">
-          <h2 className="text-primary font-bold">ORGANIZATION</h2>
-          <p className="text-white">
-            Tomáš Reichmann, Konstantin Kalinovský, Larisa Yurchenko,{" "}
-            <span className="text-primary">Garant:</span>&ensp;Aleksey Dyakov
-          </p>
-        </div>
+
+        <section className="p-0 relative flex flex-col">
+          <div className="px-10 pt-10 pb-5 flex flex-col gap-2 items-stretch bg-primary-dark mt-5">
+            <h2 className="text-xl font-bold uppercase m-0">
+              How does it work
+            </h2>
+            <ol className="leading-tight text-sm list-decimal pl-4">
+              <li>Find a team or make your own</li>
+              <li>Pick a team name and discuss an idea for a project</li>
+              <li>Each team member fills in the JOIN NOW! form</li>
+              <li>Wait for the start of the event</li>
+              <li>Design and implement your project idea</li>
+              <li>Present your project at the closing ceremony</li>
+              <li>Vote for a project in each category</li>
+              <li>
+                Everyone gets a prize for participation and winners of each
+                category get a special prize
+              </li>
+            </ol>
+          </div>
+          <div className="h-10 -mb-10 z-10 bg-[linear-gradient(180deg,#963342_0%,#96334200_100%)]"></div>
+          <img
+            src="/pimped-tank.jpg"
+            alt="Pimped out tank"
+            className="block w-auto"
+          />
+        </section>
       </main>
+
+      <main className=""></main>
     </div>
   );
 }

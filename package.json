@@ -15,6 +15,7 @@
     "react-dom": "18.0.0",
     "react-scripts": "^5.0.1",
     "remotion": "3.2.31",
+    "tailwind-merge": "^1.14.0",
     "tailwindcss": "^3.2.0"
   },
   "devDependencies": {

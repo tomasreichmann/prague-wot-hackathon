@@ -1,45 +1,28 @@
 import { DOMAttributes, AnchorHTMLAttributes } from "react";
-import styles from "./Button.module.css";
+import { twMerge } from "tailwind-merge";
 
-type ButtonCommonProps = {
+export type ButtonProps = {
   className?: string;
-  size?: "big";
   variant?: "primary" | "secondary";
+} & AnchorHTMLAttributes<HTMLAnchorElement>;
+
+const styles = {
+  primary:
+    "bg-primary text-text border-primary-dark [text-shadow:0px_2px_0px_#963342] hover:bg-primary-dark",
+  secondary:
+    "bg-secondary text-text-secondary border-secondary-dark [text-shadow:0px_2px_0px_#1A394C;] hover:bg-secondary-dark",
 };
-
-export type ButtonProps =
-  | ({
-      Component: "button";
-    } & DOMAttributes<HTMLButtonElement> &
-      ButtonCommonProps)
-  | ({
-      Component: "a";
-    } & AnchorHTMLAttributes<HTMLAnchorElement> &
-      ButtonCommonProps);
-
-const x = <a href="ccc"></a>;
 
 export default function Button({
   className: externalClassName = "",
-  variant = "secondary",
-  size,
-  ...props
+  variant = "primary",
+  ...restProps
 }: ButtonProps) {
-  const classNames = [externalClassName, styles.Button];
-  if (variant === "primary") {
-    classNames.push(styles.Button_primary);
-  }
-  if (variant === "secondary") {
-    classNames.push(styles.Button_secondary);
-  }
-  if (size === "big") {
-    classNames.push(styles.Button_big);
-  }
-  const className = classNames.join(" ");
-  if (props.Component === "button") {
-    const { Component, ...innerProps } = props;
-    return <Component className={className} {...innerProps}></Component>;
-  }
-  const { Component, ...innerProps } = props;
-  return <Component className={className} {...innerProps}></Component>;
+  const className = twMerge(
+    "px-5 py-2 text-lg font-bold text-center border-2 uppercase transition-colors hover:[text-shadow: none]",
+    styles[variant],
+    externalClassName
+  );
+
+  return <a className={className} {...restProps} />;
 }
