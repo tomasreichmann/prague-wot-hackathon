@@ -5,17 +5,29 @@ export default function App() {
   return (
     <div className="App font-body text-white relative">
       <header className="h-[360px] relative overflow-hidden md:h-auto md:overflow-visible lg:mb-5">
-        <h1 className="m-0 pt-10 pl-5 flex flex-col uppercase leading-[0.85] [letter-spacing:-0.05em] font-bold text-secondary-dark [text-shadow:0px_0px_16px_#ECD7B7] md:mx-auto md:max-w-[1024px] lg:max-w-[1440px]">
+        <h1 className="m-0 pt-10 pl-5 md:pl-10 lg:pl-10 flex flex-col uppercase leading-[0.85] [letter-spacing:-0.05em] font-bold text-secondary-dark [text-shadow:0px_0px_16px_#ECD7B7] md:mx-auto md:max-w-[1024px] lg:max-w-[1440px] ">
           <span className="text-[30px] md:text-[60px]">Prague</span>
           <span className="text-[30px] md:text-[60px]">World of Tanks</span>
           <span className="text-[41px] md:text-[84px]">Hackathon</span>
           <span className="text-[60px] md:text-[100px]">2023</span>
         </h1>
-        <img
-          src="/header.png"
-          alt=""
-          className="h-full w-full object-cover -z-10 absolute left-0 top-0 md:h-[710px]"
-        />
+        <picture>
+          <source
+            media="(max-width: 767px)"
+            srcSet="header.png"
+            type="image/png"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcSet="header.jpg"
+            type="image/jpeg"
+          />
+          <img
+            src="header.jpg"
+            alt="header"
+            className="h-full w-full object-cover -z-10 absolute left-0 top-0 md:h-[710px]"
+          />
+        </picture>
       </header>
       <main className="flex flex-col text-text md:mx-auto md:max-w-[1024px] lg:max-w-[1440px]">
         <div className="flex flex-col gap-2 px-5 mt-2 md:px-0 md:w-1/3 relative md:pr-1">
@@ -138,7 +150,10 @@ export default function App() {
             <h2 className="text-xl font-bold uppercase m-0">TEAMS</h2>
             <div className="leading-tight text-sm flex flex-col gap-2 mb-2">
               <p>Make a team of 1 to 6 people.</p>
-              <p>Everyone from Prague WoT streams is invited</p>
+              <p>
+                Everyone from Prague WoT streams (Universal, Web, Bongfish) is
+                invited (incl. other offices)
+              </p>
               <p>Anyone from Prague office can join as well</p>
               <p>Remote workers are supported</p>
             </div>
