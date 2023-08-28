@@ -3,40 +3,43 @@ import { infoChannelLink, joinLink, lookingForATeamLink } from "./constants";
 
 export default function App() {
   return (
-    <div className="App font-body text-white overflow-x-hidden relative">
-      <header className="h-[360px] relative overflow-hidden">
-        <h1 className="m-0 mt-10 ml-5 flex flex-col uppercase leading-[0.85] [letter-spacing:-0.05em] font-bold text-secondary-dark [text-shadow:0px_0px_16px_#ECD7B7]">
-          <span className="text-[30px]">Prague</span>
-          <span className="text-[30px]">World of Tanks</span>
-          <span className="text-[41px]">Hackathon</span>
-          <span className="text-[60px]">2023</span>
+    <div className="App font-body text-white relative">
+      <header className="h-[360px] relative overflow-hidden md:h-auto md:overflow-visible lg:mb-5">
+        <h1 className="m-0 pt-10 pl-5 flex flex-col uppercase leading-[0.85] [letter-spacing:-0.05em] font-bold text-secondary-dark [text-shadow:0px_0px_16px_#ECD7B7] md:mx-auto md:max-w-[1024px] lg:max-w-[1440px]">
+          <span className="text-[30px] md:text-[60px]">Prague</span>
+          <span className="text-[30px] md:text-[60px]">World of Tanks</span>
+          <span className="text-[41px] md:text-[84px]">Hackathon</span>
+          <span className="text-[60px] md:text-[100px]">2023</span>
         </h1>
         <img
           src="/header.png"
           alt=""
-          className="h-full w-full object-cover -z-10 absolute left-0 top-0"
+          className="h-full w-full object-cover -z-10 absolute left-0 top-0 md:h-[710px]"
         />
       </header>
-      <main className="flex flex-col text-text">
-        <div className="flex flex-col gap-2 px-5 mt-2">
-          <div className="flex flex-row gap-2">
-            <Button href={joinLink} className="flex-1">
+      <main className="flex flex-col text-text md:mx-auto md:max-w-[1024px] lg:max-w-[1440px]">
+        <div className="flex flex-col gap-2 px-5 mt-2 md:px-0 md:w-1/3 relative md:pr-1">
+          <div className="flex flex-row gap-2 md:absolute md:left-full md:w-[200%] md:bottom-0 md:justify-center">
+            <Button
+              href={joinLink}
+              className="flex-1 md:flex-none md:min-w-[180px]"
+            >
               Join now!
             </Button>
             <Button
               href={lookingForATeamLink}
-              className="flex-1"
+              className="flex-1 md:flex-none md:min-w-[180px]"
               variant="secondary"
             >
               I need a team
             </Button>
           </div>
 
-          <div className="px-5 py-2 bg-primary-dark text-lg leading-none text-center uppercase [letter-spacing:-0.05em] font-bold">
+          <div className="px-5 py-2 bg-primary-dark text-lg leading-none text-center uppercase [letter-spacing:-0.05em] font-bold md:px-10 md:bg-opacity-90 lg:text-3xl">
             Roll out your own World of Tanks innovation!
           </div>
 
-          <div className="px-5 py-2 flex flex-row gap-2 justify-center items-center bg-primary text-2xl leading-none text-center uppercase [letter-spacing:-0.05em] font-bold">
+          <div className="px-5 py-2 flex flex-row gap-2 justify-center items-center bg-primary text-2xl leading-none text-center uppercase [letter-spacing:-0.05em] font-bold md:px-10 md:bg-opacity-90 lg:text-3xl">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -54,7 +57,7 @@ export default function App() {
             20.-22. 9. 2023
           </div>
 
-          <div className="px-5 py-5 flex flex-col gap-2 items-stretch bg-secondary leading-tight text-sm">
+          <div className="px-5 py-5 flex flex-col gap-2 items-stretch bg-secondary leading-tight text-sm md:px-10 md:bg-opacity-90">
             <h2 className="text-xl font-bold uppercase m-0"> Categories</h2>
             <p>
               <strong>Tank It Easy</strong> &ndash; Simplify the new player or
@@ -73,13 +76,15 @@ export default function App() {
             </p>
           </div>
         </div>
+      </main>
 
-        <section className="p-0 relative flex flex-col">
-          <div className="px-10 pt-10 pb-5 flex flex-col gap-2 items-stretch bg-primary-dark mt-5">
+      <div className="text-text md:flex md:flex-row md:gap-2 md:items-stretch md:justify-center md:max-w-[1024px] lg:max-w-[1440px] md:mx-auto mt-5">
+        <section className="p-0 relative flex flex-col flex-1 basis-0">
+          <div className="px-10 md:flex-1 pt-10 pb-5 flex flex-col gap-2 items-stretch bg-primary-dark">
             <h2 className="text-xl font-bold uppercase m-0">
               How does it work
             </h2>
-            <ol className="leading-tight text-sm list-decimal pl-4">
+            <ol className="leading-tight text-sm list-decimal pl-4 mb-2">
               <li>Find a team or make your own</li>
               <li>Pick a team name and discuss an idea for a project</li>
               <li>Each team member fills in the JOIN NOW! form</li>
@@ -95,14 +100,83 @@ export default function App() {
           </div>
           <div className="h-10 -mb-10 z-10 bg-[linear-gradient(180deg,#963342_0%,#96334200_100%)]"></div>
           <img
-            src="/pimped-tank.jpg"
+            src="/tank.jpg"
             alt="Pimped out tank"
-            className="block w-auto"
+            className="block w-auto h-[206px] object-cover"
           />
         </section>
-      </main>
+        <section className="p-0 relative flex flex-col flex-1 basis-0">
+          <div className="px-10 md:flex-1 pt-10 pb-5 flex flex-col gap-2 items-stretch bg-primary">
+            <h2 className="text-xl font-bold uppercase m-0">Support</h2>
+            <div className="leading-tight text-sm flex flex-col gap-2 mb-2">
+              <p>
+                <strong>Lunch in the office</strong> - Bagette Boulevard, Pizza
+                and Sushi
+              </p>
+              <p>
+                <strong>Extended drinks options</strong>
+              </p>
+              <p>
+                <strong>Wolt</strong> codes for remote participants
+              </p>
+              <p>
+                <strong>No distractions</strong> - Hackathon has higher priority
+                than feature work
+              </p>
+            </div>
+          </div>
+          <div className="h-10 -mb-10 z-10 bg-[linear-gradient(180deg,#C15D47_0%,#C15D4700_100%)]"></div>
+          <img
+            src="/support.jpg"
+            alt="support"
+            className="block w-auto h-[206px] object-cover"
+          />
+        </section>
 
-      <main className=""></main>
+        <section className="p-0 relative flex flex-col flex-1 basis-0">
+          <div className="px-10 md:flex-1 pt-10 pb-5 flex flex-col gap-2 items-stretch bg-secondary">
+            <h2 className="text-xl font-bold uppercase m-0">TEAMS</h2>
+            <div className="leading-tight text-sm flex flex-col gap-2 mb-2">
+              <p>Make a team of 1 to 6 people.</p>
+              <p>Everyone from Prague WoT streams is invited</p>
+              <p>Anyone from Prague office can join as well</p>
+              <p>Remote workers are supported</p>
+            </div>
+          </div>
+          <div className="h-10 -mb-10 z-10 bg-[linear-gradient(180deg,#20456C_0%,#20456C00_100%)]"></div>
+          <img
+            src="/team.jpg"
+            alt="team"
+            className="block w-auto h-[206px] object-cover"
+          />
+        </section>
+      </div>
+
+      <footer className="md:max-w-[1024px] lg:max-w-[1440px] md:mx-auto">
+        <div className="flex flex-row gap-2 mt-5 mx-5 md:justify-center">
+          <Button
+            href={joinLink}
+            className="flex-1 md:flex-none md:min-w-[180px]"
+          >
+            Join now!
+          </Button>
+          <Button
+            href={lookingForATeamLink}
+            className="flex-1 md:flex-none md:min-w-[180px]"
+            variant="secondary"
+          >
+            I need a team
+          </Button>
+        </div>
+
+        <div className="flex flex-col text-center gap-1 text-text mt-5 mb-10">
+          <h2 className="text-xl font-bold uppercase">Organization</h2>
+          <p>
+            Tomáš Reichmann, Azat Tulegenov, Larisa Yurchenko, Aleksey Dyakov,
+            Dmitry Rineysky
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }

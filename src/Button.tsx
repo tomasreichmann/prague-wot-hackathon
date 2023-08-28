@@ -19,7 +19,7 @@ export default function Button({
   ...restProps
 }: ButtonProps) {
   const className = twMerge(
-    "px-5 py-2 text-lg font-bold text-center border-2 uppercase transition-colors hover:[text-shadow: none]",
+    "px-5 py-2 text-lg font-bold text-center flex flex-col leading-none justify-center border-2 uppercase transition-colors hover:[text-shadow: none]",
     styles[variant],
     externalClassName
   );
