@@ -1,5 +1,5 @@
 import Button from "./Button";
-import { infoChannelLink, joinLink, lookingForATeamLink } from "./constants";
+import { joinLink, lookingForATeamLink } from "./constants";
 
 export default function App() {
   return (
@@ -103,10 +103,10 @@ export default function App() {
               <li>Wait for the start of the event</li>
               <li>Design and implement your project idea</li>
               <li>Present your project at the closing ceremony</li>
-              <li>Vote for a project in each category</li>
+              <li>Vote for a project</li>
               <li>
-                Everyone gets a prize for participation and winners of each
-                category get a special prize
+                Everyone gets a prize for participation and the winners get a
+                special prize
               </li>
             </ol>
           </div>
